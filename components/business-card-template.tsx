@@ -36,18 +36,20 @@ export const BusinessCardTemplate: React.FC<CardTemplateProps> = ({
   const fromColor = secondaryColor
   const toColor = secondaryColor.replace(/[^,]+(?=\))/, "0.3") // Make the "to" color more transparent
 
+  const cardStyle = {
+    background: `linear-gradient(to bottom right, ${fromColor}, ${toColor})`,
+    borderColor: primaryColor.replace(/[^,]+(?=\))/, "0.2"),
+    width: orientation === "portrait" ? "320px" : "560px",
+    height: orientation === "portrait" ? "560px" : "320px",
+    aspectRatio: orientation === "portrait" ? "4/7" : "7/4",
+  }
+
   return (
 
     <div
       id="wifi-card"
-      className={`p-6 rounded-lg shadow-md border print:shadow-none flex flex-col justify-between`}
-      style={{
-        background: `linear-gradient(to bottom right, ${fromColor}, ${toColor})`,
-        borderColor: primaryColor.replace(/[^,]+(?=\))/, "0.2"),
-        width: orientation === "portrait" ? "320px" : "560px",
-        height: orientation === "portrait" ? "560px" : "320px",
-        aspectRatio: orientation === "portrait" ? "4/7" : "7/4",
-      }}
+      className={`p-6 rounded-lg shadow-md border flex flex-col justify-between`}
+      style={cardStyle}
     >
       <div className="flex items-center justify-between mb-4 shrink-0">
         <div className="flex items-center gap-2">

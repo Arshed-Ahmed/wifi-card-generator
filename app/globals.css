@@ -56,16 +56,14 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  :where(button, a, input, select, textarea, [role="button"], [tabindex]):focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
 }
 
 /* Card styles for print and download */
 #wifi-card {
   page-break-inside: avoid;
-}
-
-@media print {
-  @page {
-    size: 3.5in 2in;
-    margin: 0;
-  }
 }

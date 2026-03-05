@@ -1,0 +1,21 @@
+import type { MetadataRoute } from "next"
+import { getSiteUrl } from "@/lib/site-url"
+
+const siteUrl = getSiteUrl()
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: siteUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: `${siteUrl}/share`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+  ]
+}

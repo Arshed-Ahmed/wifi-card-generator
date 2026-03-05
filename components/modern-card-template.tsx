@@ -55,7 +55,7 @@ export const ModernCardTemplate: React.FC<CardTemplateProps> = ({
     return (
       <div
         id="wifi-card-front"
-        className={`p-8 rounded-2xl shadow-xl border-0 w-full print:shadow-none overflow-hidden relative ${
+        className={`modern-front-card p-8 rounded-2xl shadow-xl border-0 w-full overflow-hidden relative ${
           orientation === "portrait" ? "flex flex-col justify-between" : "flex flex-col"
         }`}
         style={cardStyle}
@@ -140,15 +140,15 @@ export const ModernCardTemplate: React.FC<CardTemplateProps> = ({
   return (
     <div
       id="wifi-card-back"
-      className={`p-8 rounded-2xl shadow-xl border-0 w-full print:shadow-none overflow-hidden relative flex flex-col items-center justify-center`}
+      className={`modern-back-card p-8 rounded-2xl shadow-xl border-0 w-full overflow-hidden relative flex flex-col items-center justify-center`}
       style={cardStyle}
     >
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-full h-full opacity-10" 
+      <div className="modern-back-overlay absolute top-0 right-0 w-full h-full opacity-10" 
            style={{ backgroundImage: `repeating-linear-gradient(45deg, ${accentColor} 0, ${accentColor} 1px, transparent 0, transparent 50%)`, backgroundSize: '10px 10px' }}>
       </div>
 
-      <div className="relative z-10 p-4 rounded-xl shadow-2xl bg-white/10 backdrop-blur-xl">
+      <div className="modern-back-qr-shell relative z-10 p-4 rounded-xl shadow-2xl bg-white/10 backdrop-blur-xl">
         <QRCodeSVG
           value={qrValue}
           size={orientation === "portrait" ? 200 : 180}
@@ -160,7 +160,7 @@ export const ModernCardTemplate: React.FC<CardTemplateProps> = ({
       </div>
 
       <div className="mt-8 text-center relative z-10">
-        <div className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
+        <div className="modern-back-caption inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
           <Wifi size={18} color={accentColor} />
           <span className="font-bold text-sm tracking-wide">Scan to Connect</span>
         </div>
