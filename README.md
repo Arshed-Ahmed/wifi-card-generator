@@ -25,7 +25,7 @@ A modern Next.js app for creating printable WiFi QR cards for homes, offices, ev
 
 ### Prerequisites
 
-- Node.js `>=18.18.0` (Node 20 recommended)
+- Node.js `>=18.18.0` and `<19` (Node 18 LTS recommended)
 - npm / pnpm / yarn
 
 ### Install
@@ -78,7 +78,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.example
 This repo includes `netlify.toml` with:
 
 - Build command: `npm run build`
-- Node version: `20`
+- Node version: `18.20.4`
 - Next.js runtime plugin: `@netlify/plugin-nextjs`
 
 Steps:
